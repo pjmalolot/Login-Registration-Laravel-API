@@ -58,14 +58,9 @@ const Signup = ({ navigation }) => {
         });
 
         if (response.ok) {
-          // Assuming the API response includes an access token
           const data = await response.json();
           // const accessToken = data.access_token;
 
-          // Store the access token securely (you may use AsyncStorage or other secure storage)
-          // AsyncStorage.setItem('access_token', accessToken);
-
-          // Navigate to the next screen or perform other actions
           navigation.navigate('Home');
         } else {
           Alert.alert('Sign Up Failed', 'Please check your input and try again.');
@@ -75,7 +70,6 @@ const Signup = ({ navigation }) => {
       }
     } catch (error) {
       Alert.alert('Error', 'An unexpected error occurred.');
-      console.error('API Error:', error);
     }
   };
 
