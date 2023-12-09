@@ -34,7 +34,6 @@ const Login = ({ navigation }) => {
   };
 
   const handleForgotPassword = () => {
-    // Navigate to the account recovery page or implement your own logic
     navigation.navigate('ForgotPassword');
   };
 
@@ -58,14 +57,8 @@ const Login = ({ navigation }) => {
         }
   
         const data = await response.json();
-  
-        // Assuming the API response includes an access token
-        const accessToken = data.access_token;
-  
-        // Store the access token securely (you may use AsyncStorage or other secure storage)
-        // AsyncStorage.setItem('access_token', accessToken);
-  
-        // Navigate to the next screen or perform other actions
+          // const accessToken = data.access_token;
+
         navigation.navigate('Welcome');
       } else {
         Alert.alert('Validation Error', 'Please fix the validation errors before proceeding.');
@@ -75,8 +68,6 @@ const Login = ({ navigation }) => {
     }
   };
   
-
-  // Rest of your code remains unchanged
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
@@ -98,7 +89,7 @@ const Login = ({ navigation }) => {
             <View style={{
                 width: "100%",
                 height: 48,
-                borderColor: emailError ? COLORS.error : COLORS.primary, // Change border color based on error
+                borderColor: emailError ? COLORS.error : COLORS.primary, 
                 borderWidth: 1,
                 borderRadius: 8,
                 alignItems: "center",
@@ -130,7 +121,7 @@ const Login = ({ navigation }) => {
             <View style={{
                 width: "100%",
                 height: 48,
-                borderColor: passwordError ? COLORS.error : COLORS.primary, // Change border color based on error
+                borderColor: passwordError ? COLORS.error : COLORS.primary, 
                 borderWidth: 1,
                 borderRadius: 8,
                 alignItems: "center",
